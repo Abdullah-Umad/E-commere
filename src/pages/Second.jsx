@@ -5,6 +5,7 @@ import ThirdProduct from "../components/ThirdProduct";
 import News from "../components/News";
 import { FaThList } from "react-icons/fa";
 import { IoGridSharp } from "react-icons/io5";
+import RelatedProducts from "../components/RelatedProducts";
 
 function Second() {
   const [ViewMode, setViewMode] = useState("list");
@@ -59,15 +60,47 @@ function Second() {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     },
   ];
+  const relatedproducts = [
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+    {
+      image: "/Images/cloth/6.jpg",
+      title: "Xiaomi Redmi 8 Original ",
+      price: "$32.00-$40.00",
+    },
+  ];
 
   return (
     <>
-      <div className="w-full bg-[#F8F9FA] px-20 py-4 flex">
-        <div>
-          <SideBar />
+      <div className="w-full bg-[#F8F9FA] p-1 md:px-20 md:py-4 lg:px-20 lg:py-4 flex">
+        <div className="hidden lg:block">
+          <SideBar className="hidden lg:block" />
         </div>
         <div className="flex-1">
-          <div className="w-full flex justify-end items-end gap-3 mb-4">
+          <div className="w-full flex justify-end items-end gap-3 mb-4 mr-8">
             <button onClick={() => setViewMode("list")}>
               <FaThList />
             </button>
@@ -77,7 +110,9 @@ function Second() {
           </div>
           <div
             className={`p-2 ${
-              ViewMode === "grid" ? "grid grid-cols-3 gap-4" : "space-y-2"
+              ViewMode === "grid"
+                ? "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
+                : "space-y-2"
             }`}
           >
             {products.map((item, index) =>
@@ -102,6 +137,25 @@ function Second() {
           </div>
         </div>
       </div>
+      <div className="w-full p-2 bg-[#FFFFFF] rounded-xl border border-[#DEE2E7] md:hidden lg:hidden">
+        <p className="text-[#1C1C1C] text-xl font-semibold mb-3">
+          Related Products
+        </p>
+        <div className="overflow-x-auto lg:overflow-hidden">
+          <div className="flex gap-4 lg:grid lg:grid-cols-6">
+            {relatedproducts?.map((items, index) => (
+              <RelatedProducts
+                key={index}
+                image={items.image}
+                title={items.title}
+                price={items.price}
+                className="w-40 h-48 flex-shrink-0 lg:w-auto lg:h-auto"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       <News />
     </>
   );

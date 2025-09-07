@@ -9,7 +9,7 @@ function Product({ image, title, price, discount, description }) {
       <div className={` w-44 h-48"`}>
         <img className="object-cover" src={image} alt="" />
       </div>
-      <div className={`py-3 px-2 w-[650px] h-56"}`}>
+      <div className={`py-3 px-2 w-max lg:w-[650px] h-56"}`}>
         <p className="text-base text-[#1C1C1C] font-medium">{title}</p>
         <div className="flex flex-row mt-3 items-center ">
           <p className="text-xl font-semibold ">{price}</p>
@@ -40,14 +40,14 @@ function Product({ image, title, price, discount, description }) {
         </div>
 
         <div className="mt-3">
-          <p className={`text-gray-600 `}>{description}</p>
+          <p className={`text-gray-600 hidden lg:block `}>{description}</p>
           <button className={`text-[#0D6EFD] text-base font-medium`}>
             <Link to="/fourth"> View Details </Link>
           </button>
         </div>
       </div>
       <img
-        className="w-10 h-10 object-cover"
+        className="w-10 h-10 object-cover hidden lg:block"
         src="/Images/icon/heart.png"
         alt=""
       />

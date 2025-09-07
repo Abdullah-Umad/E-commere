@@ -9,7 +9,6 @@ function SideBar() {
         <div className="w-56 h-auto py-1 px-2">
           <div className="space-y-2">
             <p className="font-semibold text-[#1C1C1C]">Category</p>
-            <img src="" alt="" />
           </div>
           <ul className="font-normal text-base ">
             {[
@@ -30,7 +29,6 @@ function SideBar() {
           <hr />
           <div className="space-y-2">
             <p className="font-semibold text-[#1C1C1C]">Brands</p>
-            <img src="" alt="" />
           </div>
           <ul className="font-normal text-base">
             {["Samsung", "Apple", "Huawei", "Pocco", "Lenovo"].map((item) => (
@@ -49,7 +47,6 @@ function SideBar() {
           <hr />
           <div className="space-y-2">
             <p className="font-semibold text-[#1C1C1C]">Features</p>
-            <img src="" alt="" />
           </div>
           <ul className="font-normal text-base">
             {[
@@ -109,7 +106,6 @@ function SideBar() {
           <hr />
           <div className="space-y-2">
             <p className="font-semibold text-[#1C1C1C]">Condition</p>
-            <img src="" alt="" />
           </div>
           <ul className="font-normal text-base">
             {["Any", "Refurbrished", "Brand New", "Old Items"].map((item) => (
@@ -125,7 +121,6 @@ function SideBar() {
           <hr />
           <div className="space-y-2">
             <p className="font-semibold text-[#1C1C1C]">Ratings</p>
-            <img src="" alt="" />
           </div>
           <ul className="font-normal text-base">
             {[

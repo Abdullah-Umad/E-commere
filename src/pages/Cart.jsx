@@ -55,9 +55,9 @@ function Cart() {
   ];
   return (
     <>
-      <div className="w-full  bg-[#F8F9FA] px-20 py-4">
+      <div className="w-full  bg-[#F8F9FA] p-2 lg:px-20 lg:py-4">
         <h3 className="font-semibold text-2xl text-[#1C1C1C]">My Cart</h3>
-        <div className="w-full flex flex-row py-4 gap-4">
+        <div className="w-full flex flex-col lg:flex lg:flex-row py-4 gap-4 ">
           <div className="w-full h-max p-2 bg-[#FFFFFF]  rounded-xl border border-[#DEE2E7]">
             <div className="py-3">
               {cart1?.map((items) => (
@@ -79,7 +79,7 @@ function Cart() {
             </div>
           </div>
           <div className="flex flex-col space-y-4">
-            <div className=" w-64 h-max py-3 px-2 bg-[#FFFFFF] space-y-3 rounded-xl border border-[#DEE2E7]">
+            <div className=" hidden lg:block w-64 h-max py-3 px-2 bg-[#FFFFFF] space-y-3 rounded-xl border border-[#DEE2E7]">
               <p className="text-base text-gray-600">Have a coupon?</p>
               <div className="w-60 h-10 border border-[#E0E0E0] rounded-lg p-2">
                 <input
@@ -92,8 +92,7 @@ function Cart() {
                 </button>
               </div>
             </div>
-            <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-              {/* Price Details */}
+            <div className="w-full lg:max-w-sm bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
               <div className="space-y-2 text-gray-800">
                 <div className="flex justify-between">
                   <span>Subtotal:</span>
@@ -156,16 +155,20 @@ function Cart() {
             </div>
           </div>
         </div>
-        <div className="w-full h-full bg-[#FFFFFF]  rounded-xl border border-[#DEE2E7] p-4 ">
-          <h5 className="font-semibold text-xl text-[#1C1C1C]">
+        <div>
+          <h5 className="font-semibold text-xl  text-[#1C1C1C]">
             Saved for Later
           </h5>
-          <div className="grid grid-cols-4 gap-4">
-            {cart2?.map((item) => (
+        </div>
+        <div className="w-full h-full bg-[#FFFFFF] rounded-xl border border-[#DEE2E7]  lg:p-4">
+          <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4">
+            {cart2?.map((item, index) => (
               <Cart2
+                key={index}
                 image={item?.image}
                 price={item?.price}
-                title={item.title}
+                title={item?.title}
+                className="w-full h-40"
               />
             ))}
           </div>

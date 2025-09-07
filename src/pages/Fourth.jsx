@@ -66,14 +66,14 @@ function Fourth() {
   ];
   return (
     <>
-      <div className="w-full  bg-[#F8F9FA] px-20 py-4">
-        <div className="w-full bg-white rounded-xl border border-[#DEE2E7] p-4 flex gap-6">
-          <div className="flex flex-col items-center w-1/4">
-            <div className="border border-gray-200 rounded-lg p-1 mb-4">
+      <div className="w-full  bg-[#F8F9FA]  p-2 lg:px-20 lg:py-4">
+        <div className="w-full bg-white rounded-xl border border-[#DEE2E7] p-4 flex flex-col lg:flex lg:flex-row gap-6">
+          <div className="flex flex-col items-center w-full lg:w-1/4">
+            <div className="border  border-gray-200 rounded-lg p-1 mb-4">
               <img
                 src="/Images/cloth/product-main.png"
                 alt="Mens Long Sleeve T-shirt"
-                className="w-52 h-52 object-contain"
+                className=" lg:w-52 lg:h-52 object-contain"
               />
             </div>
             <img src="/Images/cloth/Gallery.png" alt="" />
@@ -143,32 +143,32 @@ function Fourth() {
             </div>
           </div>
 
-          <div className="w-1/4 h-max border border-gray-200 rounded-lg p-4 flex flex-col ">
+          <div className="w-full  lg:w-1/4 lg:h-max border border-gray-200 rounded-lg p-4 flex flex-row justify-between lg:flex lg:flex-col ">
             <div>
               <h3 className="text-sm text-gray-500">Supplier</h3>
               <p className="text-lg font-bold text-gray-800">
                 Guanjoi Trading LLC
               </p>
-              <div className="mt-3 text-sm text-gray-600 space-y-1">
+              <div className="mt-3 text-sm  text-gray-600 space-y-1">
                 <p>Germany, Berlin</p>
                 <p>Verified Seller</p>
                 <p>Worldwide shipping</p>
               </div>
             </div>
 
-            <div className="mt-4 space-y-2">
-              <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+            <div className=" flex flex-col mt-4 space-y-2">
+              <button className="w-max px-4 lg:w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
                 Send inquiry
               </button>
-              <button className="w-full border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
+              <button className="w-max px-2 lg:w-full border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
                 Seller’s profile
               </button>
             </div>
           </div>
         </div>
 
-        <div className="flex py-4 gap-4">
-          <div className="w-full h-[600px] bg-white px-4 py-4 rounded-xl border border-[#DEE2E7]">
+        <div className=" flex py-4 gap-4 ">
+          <div className="w-full h-[600px] hidden lg:block bg-white px-4 py-4 rounded-xl border border-[#DEE2E7]">
             <div className="flex items-center gap-4 border-b border-gray-300 px-4 pb-2">
               <ul className="flex gap-6">
                 <li className="cursor-pointer">Description</li>
@@ -236,7 +236,7 @@ function Fourth() {
             </div>
           </div>
           {/* You May Like */}
-          <div className="w-1/4 h-max bg-[#FFFFFF]  rounded-xl border border-[#DEE2E7] px-4 py-4">
+          <div className="w-1/4 h-max hidden lg:block bg-[#FFFFFF]  rounded-xl border border-[#DEE2E7] px-4 py-4">
             <p className="text-[#1C1C1C] text-xl font-semibold ">
               You May Like
             </p>
@@ -252,20 +252,25 @@ function Fourth() {
           </div>
         </div>
         {/* Related Products */}
-        <div className="w-full h-80 bg-[#FFFFFF]  rounded-xl border border-[#DEE2E7] px-5 py-3">
-          <p className="text-[#1C1C1C] text-xl font-semibold ">
+        <div className="w-full h-80 bg-[#FFFFFF] rounded-xl border border-[#DEE2E7] px-5 py-3">
+          <p className="text-[#1C1C1C] text-xl font-semibold mb-3">
             Related Products
           </p>
-          <div className="grid grid-cols-6 gap-2">
-            {relatedproducts?.map((items) => (
-              <RelatedProducts
-                image={items.image}
-                title={items.title}
-                price={items.price}
-              />
-            ))}
+          <div className="overflow-x-auto lg:overflow-hidden">
+            <div className="flex gap-4 lg:grid lg:grid-cols-6">
+              {relatedproducts?.map((items, index) => (
+                <RelatedProducts
+                  key={index}
+                  image={items.image}
+                  title={items.title}
+                  price={items.price}
+                  className="w-40 h-48 flex-shrink-0 lg:w-auto lg:h-auto"
+                />
+              ))}
+            </div>
           </div>
         </div>
+
         <DiscBanner />
       </div>
     </>
